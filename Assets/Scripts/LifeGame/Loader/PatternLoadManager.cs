@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 public class PatternLoadManager : MonoBehaviour
 {
@@ -41,40 +42,6 @@ public class PatternLoadManager : MonoBehaviour
         new PatternInfo("acorn","どんぐり"),
         new PatternInfo("diehard","ダイハード"),
     };
-
-    // private static readonly string[] patterns =
-    // {
-    //     "aircraftcarrier",
-    //     "barge",
-    //     "beacon",
-    //     "beehive",
-    //     "blinker",
-    //     "block",
-    //     "boat",
-    //     "canoe",
-    //     "clock",
-    //     "clock2",
-    //     "eater1",
-    //     "glider",
-    //     "gosperglidergun",
-    //     "hertzoscillator",
-    //     "honeyfarm",
-    //     "hookwithtail",
-    //     "hwss",
-    //     "loaf",
-    //     "longboat",
-    //     "lwss",
-    //     "mango",
-    //     "mwss",
-    //     "pentadecathlon",
-    //     "pinwheel",
-    //     "pond",
-    //     "pulsar",
-    //     "snake",
-    //     "toad",
-    //     "trafficlight",
-    //     "tub",
-    // };
 
     public static PatternLoadManager Instance { get; private set; }
 
@@ -126,7 +93,23 @@ public class PatternLoadManager : MonoBehaviour
         }
 
         isLoadCompleted = true;
-        Debug.Log("LoadPattern() Load Finished.");
+        // Debug.Log("LoadPattern() Load Finished.");
+    }
+
+    private string GetEntry(string target)
+    {
+        string targetTableName = "StringTable";
+        string prefix = "pattern.";
+        target = prefix + target;
+        var entry = LocalizationSettings.StringDatabase.GetTableEntry(targetTableName, target).Entry;
+        if (entry == null)
+        {
+            return "";
+        }
+        else
+        {
+            return entry.Value;
+        }
     }
 
     private string FilenamneToPatternName(string filename)
@@ -135,7 +118,15 @@ public class PatternLoadManager : MonoBehaviour
         {
             if (item.filename == filename)
             {
-                return item.patternName;
+                string patternName = GetEntry(filename);
+                if (patternName.Length > 0)
+                {
+                    return patternName;
+                }
+                else
+                {
+                    return item.patternName;
+                }
             }
         }
 

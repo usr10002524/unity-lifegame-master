@@ -88,7 +88,14 @@ public class CellWorld : MonoBehaviour
         if (GameController.Instance.IsRequestSave())
         {
             ServerData.WorldData worldData = SetupWorldData();
-            AtsumaruAPI.Instance.SaveWorldData(worldData);
+            if (AtsumaruAPI.Instance.IsValid())
+            {
+                AtsumaruAPI.Instance.SaveWorldData(worldData);
+            }
+            else
+            {
+                LocalStorageAPI.Instance.SaveWorldData(worldData);
+            }
             GameController.Instance.ResetRequestSave();
             return;
         }
@@ -123,7 +130,19 @@ public class CellWorld : MonoBehaviour
         string cellData = "";
 
         GameManager.StartStat startStat = GameManager.Instance.GetStartStat();
-        ServerData.WorldData worldData = AtsumaruAPI.Instance.GetWorldData();
+        ServerData.WorldData worldData = null;
+        if (AtsumaruAPI.Instance.IsValid())
+        {
+            worldData = AtsumaruAPI.Instance.GetWorldData();
+        }
+        else
+        {
+            worldData = LocalStorageAPI.Instance.GetWorldData();
+            if (worldData == null)
+            {
+                worldData = new ServerData.WorldData();
+            }
+        }
 
         if (startStat == GameManager.StartStat.Continue)
         {
@@ -234,7 +253,20 @@ public class CellWorld : MonoBehaviour
     private void PlayBgm()
     {
         BgmType bgmType = BgmType.bgm01;
-        ServerData.SoundSettings settings = AtsumaruAPI.Instance.GetSoundSettings();
+        ServerData.SoundSettings settings = null;
+        if (AtsumaruAPI.Instance.IsValid())
+        {
+            settings = AtsumaruAPI.Instance.GetSoundSettings();
+        }
+        else
+        {
+            settings = LocalStorageAPI.Instance.GetSoundSettings();
+            if (settings == null)
+            {
+                settings = new ServerData.SoundSettings();
+            }
+        }
+
         if (settings.IsValid())
         {
             BgmType type = (BgmType)Enum.ToObject(typeof(BgmType), settings.bgmIndex);

@@ -14,7 +14,7 @@
         {
             "name": "Unity Editor",
             "type": "unity",
-            "path": "/C:/procject/github/unity-lifegame-master/LifeGame/Library/EditorInstance.json",
+            "path": "/C:/procject/github/001_LifeGame/unity-lifegame-master/Library/EditorInstance.json",
             "request": "launch"
         },
         {

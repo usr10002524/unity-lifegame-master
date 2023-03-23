@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 /// <summary>
 /// 各種メッセージを表示する際の条件を判定するクラス
@@ -109,16 +110,16 @@ namespace WorldMessagePredicate
                 int cells = cellWorld.GetAliveCellCount();
                 if (cells < cond)
                 {
-                    return "パネルに生命を配置してみましょう";
+                    return GetEntry("main.message.letsput");
                 }
                 else
                 {
-                    return "時を進め、生命たちの行く末を見守りましょう";
+                    return GetEntry("main.message.letsplay");
                 }
             }
             else if (GameController.Instance.IsViewMode())
             {
-                return "生命たちの行く末を見守りましょう";
+                return GetEntry("main.message.letswatch");
             }
             else
             {
@@ -172,6 +173,21 @@ namespace WorldMessagePredicate
             else
             {
                 return durationOnce;
+            }
+        }
+
+        private string GetEntry(string target)
+        {
+            string targetTableName = "StringTable";
+            LocalizedStringDatabase stringDatabase = LocalizationSettings.StringDatabase;
+            var entry = LocalizationSettings.StringDatabase.GetTableEntry(targetTableName, target).Entry;
+            if (entry == null)
+            {
+                return "";
+            }
+            else
+            {
+                return entry.Value;
             }
         }
     }

@@ -21,25 +21,14 @@ public class LoadScene : MonoBehaviour
     /// </summary>
     void Start()
     {
-        // if (AtsumaruAPI.Instance.IsValid())
-        // {
-        //     if (AtsumaruAPI.Instance.LoadServerData())
-        //     {
-        //         SetText(0);
-        //         loadingText.gameObject.SetActive(true);
-        //         StartCoroutine(LoadingCoroutine());
-        //     }
-        //     else
-        //     {
-        //         SceneManager.LoadScene("TitleScene");
-        //     }
-        // }
-        // else
-        // {
-        //     SceneManager.LoadScene("TitleScene");
-        // }
-
-        AtsumaruAPI.Instance.LoadServerData();
+        if (AtsumaruAPI.Instance.IsValid())
+        {
+            AtsumaruAPI.Instance.LoadServerData();
+        }
+        else
+        {
+            LocalStorageAPI.Instance.LoadLocalrData();
+        }
         loadingText.gameObject.SetActive(true);
         StartCoroutine(LoadingCoroutine());
     }
@@ -88,8 +77,9 @@ public class LoadScene : MonoBehaviour
             }
         }
 
-        if (AtsumaruAPI.Instance.IsServerDataLoaded())
+        if (CheckLoadComplete())
         {
+            Restore();
             SetCompleteText();
             yield return new WaitForSeconds(displayCompleteTime);
         }
@@ -103,9 +93,19 @@ public class LoadScene : MonoBehaviour
     /// <returns>ロード中の場合はtrue、そうでない場合はfalseを返す</returns>
     private bool CheckLoadComplete()
     {
-        if (!AtsumaruAPI.Instance.IsServerDataLoaded())
+        if (AtsumaruAPI.Instance.IsValid())
         {
-            return false;
+            if (!AtsumaruAPI.Instance.IsServerDataLoaded())
+            {
+                return false;
+            }
+        }
+        else
+        {
+            if (!LocalStorageAPI.Instance.IsLocalDataLoaded())
+            {
+                return false;
+            }
         }
         if (!PatternLoadManager.Instance.IsLoadCompleted())
         {
@@ -135,5 +135,52 @@ public class LoadScene : MonoBehaviour
     private void SetCompleteText()
     {
         loadingText.SetText(completeText);
+    }
+
+    /// <summary>
+    /// 各種設定の復帰を行う
+    /// </summary>
+    private void Restore()
+    {
+        ResotreLocale();
+        RestoreSound();
+    }
+
+    private void RestoreSound()
+    {
+        if (AtsumaruAPI.Instance.IsValid())
+        {
+
+        }
+        else
+        {
+            ServerData.SoundSettings soundSettings = LocalStorageAPI.Instance.GetSoundSettings();
+            if (soundSettings == null)
+            {
+                soundSettings = new ServerData.SoundSettings();
+            }
+            // Debug.LogFormat("LoadScene.RestoreSound() volume:{0}", soundSettings.volume);
+            AudioListener.volume = soundSettings.volume;
+        }
+    }
+
+    /// <summary>
+    /// 言語設定を反映させる
+    /// </summary>
+    private void ResotreLocale()
+    {
+        if (AtsumaruAPI.Instance.IsValid())
+        {
+            AppLocale.SetLocale(LangType.LangJp);
+        }
+        else
+        {
+            ServerData.LangSettings langSettings = LocalStorageAPI.Instance.GetLangSettings();
+            if (langSettings == null)
+            {
+                langSettings = new ServerData.LangSettings();
+            }
+            AppLocale.SetLocale((LangType)langSettings.langIndex);
+        }
     }
 }

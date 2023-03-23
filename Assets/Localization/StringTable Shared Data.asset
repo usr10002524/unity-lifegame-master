@@ -1,0 +1,264 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: StringTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: StringTable
+  m_TableCollectionNameGuidString: ddbe69b272f27314986bb33cbd83ed19
+  m_Entries:
+  - m_Id: 1692708212736
+    m_Key: config.button.return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2760578011136
+    m_Key: config.menu.default
+    m_Metadata:
+      m_Items: []
+  - m_Id: 161799835648
+    m_Key: config.setting.bgm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9199618985984
+    m_Key: config.setting.bgm.item01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9719763013632
+    m_Key: config.setting.bgm.item02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9807981809664
+    m_Key: config.setting.bgm.item03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17686918959104
+    m_Key: main.button.clear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17811045191680
+    m_Key: main.button.close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18478342180864
+    m_Key: main.button.edit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18588367163392
+    m_Key: main.button.erase
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18671712178176
+    m_Key: main.button.help
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19391861592064
+    m_Key: main.button.help.next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19846381539328
+    m_Key: main.button.help.prev
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19695051051008
+    m_Key: main.button.pattern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21773337071616
+    m_Key: main.button.play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18932933431296
+    m_Key: main.button.preview.hflip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19190295924736
+    m_Key: main.button.preview.lrot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19506881990656
+    m_Key: main.button.preview.ok
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20581424926720
+    m_Key: main.button.preview.rrot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21141142212608
+    m_Key: main.button.preview.vflip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20316583989248
+    m_Key: main.button.return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20828821753856
+    m_Key: main.button.save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20937978515456
+    m_Key: main.button.speeddown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21076554125312
+    m_Key: main.button.speedup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21829242949632
+    m_Key: main.button.view
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22546963861504
+    m_Key: main.button.write
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18033112616960
+    m_Key: main.dropdown.preview
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43748918923264
+    m_Key: main.message.letsplay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43659982901248
+    m_Key: main.message.letsput
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43813909663744
+    m_Key: main.message.letswatch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19953994797056
+    m_Key: main.preview.area
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38487940501504
+    m_Key: pattern.acorn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37712094924800
+    m_Key: pattern.beacon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37193788002304
+    m_Key: pattern.blinker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37765849124864
+    m_Key: pattern.clock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37842286120960
+    m_Key: pattern.clock2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38536997081088
+    m_Key: pattern.diehard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38173166374912
+    m_Key: pattern.glider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38395363823616
+    m_Key: pattern.hammerhead
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41090912980992
+    m_Key: pattern.initial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38044485128192
+    m_Key: pattern.koksgalaxy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38215579176960
+    m_Key: pattern.lwss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38114781663232
+    m_Key: pattern.pentadecathlon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37984183619584
+    m_Key: pattern.pinwheel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37934493700096
+    m_Key: pattern.pulsar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38445091491840
+    m_Key: pattern.robster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38337113329664
+    m_Key: pattern.spider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37654821703680
+    m_Key: pattern.toad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37586030923776
+    m_Key: pattern.trafficlight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 638590837428224
+    m_Key: help.page.title1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 638950004068352
+    m_Key: help.page.title2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 639161627676672
+    m_Key: help.page.title3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 639200588566528
+    m_Key: help.page.title4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 639289038049280
+    m_Key: help.page.title5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 639349335363584
+    m_Key: help.page.title6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 639433552793600
+    m_Key: help.page.title7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 679429672374272
+    m_Key: config.item.bgm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 679516800651264
+    m_Key: config.item.lang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 681772224712704
+    m_Key: config.setting.lang
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8794945590156328985
+  references:
+    version: 2
+    RefIds:
+    - rid: 8794945590156328985
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1679290159785

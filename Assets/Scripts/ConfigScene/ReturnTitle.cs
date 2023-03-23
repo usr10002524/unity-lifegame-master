@@ -7,9 +7,9 @@ using UnityEngine;
 /// </summary>
 public class ReturnTitle : MonoBehaviour
 {
-    [SerializeField] private float sceneTransitDuration = 0.5f;
-    [SerializeField] private Color sceneTransitColor = Color.black;
-    [SerializeField] private int sceneTransitSortOrder = 1;
+    private float sceneTransitDuration = 0.5f;
+    private Color sceneTransitColor = Color.black;
+    private int sceneTransitSortOrder = 2;
 
     /// <summary>
     /// タイトルに戻るボタンが押されたときの処理

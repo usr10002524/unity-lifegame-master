@@ -34,10 +34,11 @@ public class ConfigItemBgm : ConfigItemBase
     private Vector2 origPrevPos;
     private Vector2 origNextPos;
 
+    private bool positionInitialized;
+
     //--- ServerData 関連 ---
     private ServerData.SoundSettings soundSettings;
     private bool isDirty;
-
 
     /// <summary>
     /// Start
@@ -87,7 +88,11 @@ public class ConfigItemBgm : ConfigItemBase
         }
         else
         {
-            soundSettings = new ServerData.SoundSettings();
+            soundSettings = LocalStorageAPI.Instance.GetSoundSettings();
+            if (soundSettings == null)
+            {
+                soundSettings = new ServerData.SoundSettings();
+            }
         }
 
         if (soundSettings.IsValid())
@@ -139,6 +144,10 @@ public class ConfigItemBgm : ConfigItemBase
             if (AtsumaruAPI.Instance.IsValid())
             {
                 AtsumaruAPI.Instance.SaveSoundSettings(soundSettings);
+            }
+            else
+            {
+                LocalStorageAPI.Instance.SaveSoundSettings(soundSettings);
             }
         }
     }
@@ -196,6 +205,13 @@ public class ConfigItemBgm : ConfigItemBase
         OnDeselectCurrentItem();
     }
 
+    /// <summary>
+    /// 再描画を行う。
+    /// </summary>
+    public override void Redraw()
+    {
+        SetItems();
+    }
 
     /// <summary>
     /// パネルの色を指定した色に変更する。
@@ -228,6 +244,7 @@ public class ConfigItemBgm : ConfigItemBase
         origCurrentPos = GetAnchoredPosion(currentItem);
         origPrevPos = GetAnchoredPosion(prevItem);
         origNextPos = GetAnchoredPosion(nextItem);
+        positionInitialized = true;
     }
 
     /// <summary>
@@ -495,5 +512,19 @@ public class ConfigItemBgm : ConfigItemBase
         GameObject obj = itemList[currentIndex];
         SettingItemBase item = obj.GetComponent<SettingItemBase>();
         item.OnDeselected();
+    }
+
+    /// <summary>
+    /// 指定したオブジェクトにアンカーを考慮した位置を設定する
+    /// </summary>
+    /// <param name="obj">GameObject</param>
+    /// <param name="pos">アンカーを考慮した座標</param>
+    protected override void SetAnchordPosition(GameObject obj, Vector2 pos)
+    {
+        if (!positionInitialized)
+        {
+            return;
+        }
+        base.SetAnchordPosition(obj, pos);
     }
 }

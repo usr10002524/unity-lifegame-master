@@ -34,7 +34,7 @@ public class PatternPreview : MonoBehaviour
     private bool doropdownInitialized;
     private List<string> filenameList;
     private List<string> dropdownItems;
-    private static readonly string initialItem = "パターンを選択";
+    private string initialItem = "パターンを選択";
 
     private string patternName;
     private PatternLoader.PatternData patternData;
@@ -75,14 +75,14 @@ public class PatternPreview : MonoBehaviour
     {
         CheckAndSetupDropdown();
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            OpenWindow();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            CloseWindow();
-        }
+        // if (Input.GetKeyDown(KeyCode.Alpha1))
+        // {
+        //     OpenWindow();
+        // }
+        // if (Input.GetKeyDown(KeyCode.Alpha2))
+        // {
+        //     CloseWindow();
+        // }
     }
     public void OnDropdownValueChanged(int value)
     {
@@ -187,6 +187,9 @@ public class PatternPreview : MonoBehaviour
             return; // 他のメニューが開いている
         }
 
+        doropdownInitialized = false;
+        InitDropdown();
+
         setStat = Stat.Open;
         isMoving = true;
         StartCoroutine(MoveWindow());
@@ -258,6 +261,11 @@ public class PatternPreview : MonoBehaviour
     public bool IsClose()
     {
         return (currentStat == Stat.Close);
+    }
+
+    public void SetString(string str)
+    {
+        initialItem = str;
     }
 
     private void CheckAndSetupDropdown()

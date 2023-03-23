@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Japanese (Japan) (ja-JP)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Assets-Japanese (Japan) (ja-JP)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 1bc25d32781306a40b15ea648584cb86
+  m_SerializeEntries:
+  - m_GUID: c189f3be3d60cf64f8f4970ba2f2fc23
+    m_Address: inst5
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja-JP
+  - m_GUID: 9acdefeb8c618224091d5551363f7c51
+    m_Address: inst4
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja-JP
+  - m_GUID: 3655c7e0233422844ad6bd12e67afa56
+    m_Address: inst6
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja-JP
+  - m_GUID: 07ad1018aff9adc469e7eb65718268ee
+    m_Address: inst7
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja-JP
+  - m_GUID: c79e9467b6117a4488d6a64df2f8ad7e
+    m_Address: inst2
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja-JP
+  - m_GUID: 97f539063a4d1484292ef4089d1eef3d
+    m_Address: inst1
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja-JP
+  - m_GUID: dc9af9186c1996244870ab2ed07003e6
+    m_Address: inst3
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja-JP
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 6b2b867c7628c0f41b8b2ebbede2028f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: de947f3cf044f81499c3ad60974b44fc, type: 2}
+    - {fileID: 11400000, guid: b58336d8044e82c439d3cc39a083572a, type: 2}

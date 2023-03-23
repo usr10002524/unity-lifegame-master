@@ -32,8 +32,10 @@ public class HelpPanelController : MonoBehaviour
     /// </summary>
     private class PageInfo
     {
-        public string title;
-        public Sprite sprite;
+        // public string title;
+        // public Sprite sprite;
+
+        public HelpPage helpPage;
     }
 
     private int currentPange;
@@ -235,17 +237,35 @@ public class HelpPanelController : MonoBehaviour
     /// </summary>
     private void SetupPageInfo()
     {
-        pageInfos = new List<PageInfo>();
+        if (pageInfos != null)
+        {
+            pageInfos.Clear();
+        }
+        else
+        {
+            pageInfos = new List<PageInfo>();
+        }
         currentPange = 0;
 
         foreach (var item in pageObjects)
         {
             HelpPage helpPage = item.GetComponent<HelpPage>();
-            PageInfo info = new PageInfo();
-            info.title = helpPage.title;
-            info.sprite = helpPage.sprite;
-            pageInfos.Add(info);
+            if (helpPage != null)
+            {
+                PageInfo info = new PageInfo();
+                info.helpPage = helpPage;
+                pageInfos.Add(info);
+            }
         }
+    }
+
+    /// <summary>
+    /// 現在のページを再描画する。
+    /// </summary>
+    public void Redraw()
+    {
+        // 現在のページを設定
+        SetPage(currentPange);
     }
 
     /// <summary>
@@ -254,14 +274,21 @@ public class HelpPanelController : MonoBehaviour
     /// <param name="page">ページ数</param>
     private void SetPage(int page)
     {
+        if (pageInfos == null)
+        {
+            return;
+        }
         if (page < 0 || page >= pageInfos.Count)
         {
             return;
         }
 
-        title.SetText(pageInfos[page].title);
+        if (pageInfos[page].helpPage != null)
+        {
+            title.SetText(pageInfos[page].helpPage.title);
+            image.sprite = pageInfos[page].helpPage.sprite;
+        }
         pageNumber.SetText(string.Format("{0} / {1}", page + 1, pageInfos.Count));
-        image.sprite = pageInfos[page].sprite;
     }
 
     // 各オブジェクトのアクティブ化を切り替える。

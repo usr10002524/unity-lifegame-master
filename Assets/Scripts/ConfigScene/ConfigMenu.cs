@@ -9,7 +9,7 @@ public class ConfigMenu : MonoBehaviour
     [SerializeField] private GameObject titleObject;
     [SerializeField] private GameObject instObject;
 
-    private static readonly string defaultInstText = "コンフィグでは各種設定を行うことができます";
+    private string defaultInstText = "コンフィグでは各種設定を行うことができます";
 
     // Update is called once per frame
     void Update()
@@ -129,5 +129,14 @@ public class ConfigMenu : MonoBehaviour
                 configItem.OnExitMenu();
             }
         }
+    }
+
+    /// <summary>
+    /// ローカリゼーションのテキストを設定する。
+    /// </summary>
+    /// <param name="str">設定するテキスト</param>
+    public virtual void SetString(string str)
+    {
+        defaultInstText = str;
     }
 }

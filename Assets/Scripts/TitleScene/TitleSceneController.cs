@@ -11,9 +11,9 @@ public class TitleSceneController : MonoBehaviour
     [SerializeField] private GameObject worldObject;
     [SerializeField] private GameObject fadeObject;
     [SerializeField] private float demoReplaceTime;
-    [SerializeField] private float sceneTransitDuration = 0.5f;
-    [SerializeField] private Color sceneTransitColor = Color.black;
-    [SerializeField] private int sceneTransitSortOrder = 1;
+    private float sceneTransitDuration = 0.5f;
+    private Color sceneTransitColor = Color.black;
+    private int sceneTransitSortOrder = 2;
 
 
     private CellWorldTitle cellWorld;

@@ -19,6 +19,7 @@ public class ServerData
     {
         public static readonly int SoundSettings = 1;
         public static readonly int WorldData = 1;
+        public static readonly int LangSettings = 1;
     }
 
     /// <summary>
@@ -28,6 +29,7 @@ public class ServerData
     {
         public static readonly string SoundSettings = "SoundSettings";
         public static readonly string WorldData = "WorldData";
+        public static readonly string LangSettings = "LangSettings";
     }
 
     /// <summary>
@@ -91,6 +93,21 @@ public class ServerData
             }
 
             return true;
+        }
+    }
+
+    /// <summary>
+    /// 言語設定
+    /// </summary>
+    [System.Serializable]
+    public class LangSettings
+    {
+        public int dataVersion; // データバージョン
+        public int langIndex;   // 選択中の言語
+
+        public bool IsValid()
+        {
+            return (dataVersion > 0);
         }
     }
 }

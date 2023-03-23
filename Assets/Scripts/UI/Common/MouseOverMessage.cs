@@ -16,6 +16,17 @@ public class MouseOverMessage : MonoBehaviour
     private Vector2 rectMax = new Vector2();
     private bool isEnter;
 
+
+
+    /// <summary>
+    /// ローカリゼーションのテキストを設定する。
+    /// </summary>
+    /// <param name="str">設定するテキスト</param>
+    public virtual void SetString(string str)
+    {
+        message = str;
+    }
+
     /// <summary>
     /// Start
     /// </summary>

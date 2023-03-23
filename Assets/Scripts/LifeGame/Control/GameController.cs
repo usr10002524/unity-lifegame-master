@@ -19,9 +19,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private bool requestClear = false;
     [SerializeField] private bool requestSave = false;
 
-    [SerializeField] private float sceneTransitDuration = 0.5f;
-    [SerializeField] private Color sceneTransitColor = Color.black;
-    [SerializeField] private int sceneTransitSortOrder = 1;
+    private float sceneTransitDuration = 0.5f;
+    private Color sceneTransitColor = Color.black;
+    private int sceneTransitSortOrder = 2;
 
     private float fadeDump = 1.0f;
     private string patternName;
@@ -239,7 +239,7 @@ public class GameController : MonoBehaviour
     /// </summary>
     public void OnClickSaveButton()
     {
-        if (AtsumaruAPI.Instance.IsValid())
+        // if (AtsumaruAPI.Instance.IsValid())
         {
             requestSave = true;
         }

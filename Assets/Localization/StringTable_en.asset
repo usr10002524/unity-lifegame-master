@@ -1,0 +1,259 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StringTable_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: ddbe69b272f27314986bb33cbd83ed19, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 161799835648
+    m_Localized: Select BGM in Game.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1692708212736
+    m_Localized: Return Title.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2760578011136
+    m_Localized: Configuration Settings.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9199618985984
+    m_Localized: Listening in the rain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9719763013632
+    m_Localized: Yoroyoro Bar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9807981809664
+    m_Localized: Drift in space
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17686918959104
+    m_Localized: Redo everything.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17811045191680
+    m_Localized: Close window.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18033112616960
+    m_Localized: Select a pattern.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18478342180864
+    m_Localized: Place the life on the panel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18588367163392
+    m_Localized: Erase life from panel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18671712178176
+    m_Localized: Open help window.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18932933431296
+    m_Localized: Reverses left and right.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19190295924736
+    m_Localized: Rotate counterclockwise.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19391861592064
+    m_Localized: Next page.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19506881990656
+    m_Localized: Place a pattern.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19695051051008
+    m_Localized: Place a pattern.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19846381539328
+    m_Localized: Previous page.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19953994797056
+    m_Localized: Select a pattern and it will appear here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20316583989248
+    m_Localized: Return to title screen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20581424926720
+    m_Localized: Rotate clockwise.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20828821753856
+    m_Localized: Save the current state.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20937978515456
+    m_Localized: Speed down the flow of time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21076554125312
+    m_Localized: Speed up the flow of time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21141142212608
+    m_Localized: Flip up and down.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21773337071616
+    m_Localized: Watch over the end of life.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21829242949632
+    m_Localized: Watch over the end of life.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22546963861504
+    m_Localized: Place the life on the panel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37193788002304
+    m_Localized: blinker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37586030923776
+    m_Localized: trafficlight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37654821703680
+    m_Localized: toad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37712094924800
+    m_Localized: beacon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37765849124864
+    m_Localized: clock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37842286120960
+    m_Localized: clock II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37934493700096
+    m_Localized: pulsar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37984183619584
+    m_Localized: pinwheel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38044485128192
+    m_Localized: galaxy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38114781663232
+    m_Localized: pentadecathlon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38173166374912
+    m_Localized: glider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38215579176960
+    m_Localized: star ship
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38337113329664
+    m_Localized: spider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38395363823616
+    m_Localized: hammerhead
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38445091491840
+    m_Localized: robster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38487940501504
+    m_Localized: acorn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38536997081088
+    m_Localized: diehard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41090912980992
+    m_Localized: Select Pattern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43659982901248
+    m_Localized: Let's place lives in the bottom panel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43813909663744
+    m_Localized: Let's watch over the end of life.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43748918923264
+    m_Localized: Advance time with the button and watch over the future of life.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 638590837428224
+    m_Localized: How to play 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 638950004068352
+    m_Localized: How to play 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 639161627676672
+    m_Localized: How to play 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 639200588566528
+    m_Localized: How to play 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 639289038049280
+    m_Localized: Edit mode panel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 639349335363584
+    m_Localized: View mode panel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 639433552793600
+    m_Localized: Camera operation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 679429672374272
+    m_Localized: BGM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 679516800651264
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 681772224712704
+    m_Localized: Select Language in Game.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

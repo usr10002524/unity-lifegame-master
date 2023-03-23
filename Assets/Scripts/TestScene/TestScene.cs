@@ -61,7 +61,7 @@ public class TestScene : MonoBehaviour
         if (value < dropdownItems.Count)
         {
             string name = dropdownItems[value];
-            Debug.Log(string.Format("DropdownValueChanged() value:{0} name:{1}", value, name));
+            // Debug.Log(string.Format("DropdownValueChanged() value:{0} name:{1}", value, name));
 
             if (value > 0)
             {

@@ -19,6 +19,15 @@ public class SettingItemBase : MonoBehaviour
     }
 
     /// <summary>
+    /// ローカリゼーションのテキストを設定する。
+    /// </summary>
+    /// <param name="str">設定するテキスト</param>
+    public virtual void SetString(string str)
+    {
+        itemName = str;
+    }
+
+    /// <summary>
     /// アイテムが選択状態となったときの処理。
     /// 要オーバーライド。
     /// </summary>

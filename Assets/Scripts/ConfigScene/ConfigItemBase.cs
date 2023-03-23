@@ -108,6 +108,23 @@ public class ConfigItemBase : MonoBehaviour
     }
 
     /// <summary>
+    /// ローカリゼーションのテキストを設定する。
+    /// </summary>
+    /// <param name="str">設定するテキスト</param>
+    public virtual void SetString(string str)
+    {
+        instText = str;
+    }
+
+    /// <summary>
+    /// 再描画を行う。
+    /// </summary>
+    public virtual void Redraw()
+    {
+
+    }
+
+    /// <summary>
     /// 項目内にマウスポインタがあるかどうか確認する
     /// </summary>
     /// <returns>項目内にマウスポインタがある場合はtrue、そうでない場合はfalseを返す</returns>
@@ -250,7 +267,7 @@ public class ConfigItemBase : MonoBehaviour
     /// </summary>
     /// <param name="obj">GameObject</param>
     /// <param name="pos">アンカーを考慮した座標</param>
-    protected void SetAnchordPosition(GameObject obj, Vector2 pos)
+    protected virtual void SetAnchordPosition(GameObject obj, Vector2 pos)
     {
         RectTransform rectTransform = obj.GetComponent<RectTransform>();
         if (rectTransform == null)
