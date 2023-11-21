@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// サウンドボリュームコントローラ
+/// </summary>
 public class SoundVolumeController : MonoBehaviour
 {
     [SerializeField] private GameObject buttonObject;
@@ -13,6 +16,9 @@ public class SoundVolumeController : MonoBehaviour
 
     private bool toggleButton;
 
+    /// <summary>
+    /// Awake
+    /// </summary>
     private void Awake()
     {
         if (buttonObject != null)
@@ -28,12 +34,17 @@ public class SoundVolumeController : MonoBehaviour
         CloseSlider();
     }
 
+    /// <summary>
+    /// Start
+    /// </summary>
     private void Start()
     {
         OnChangeValue(AudioListener.volume);
     }
 
-
+    /// <summary>
+    /// サウンドボリュームのスライダーを表示する
+    /// </summary>
     private void OpenSlider()
     {
         if (sliderObject != null)
@@ -43,6 +54,9 @@ public class SoundVolumeController : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// サウンドボリュームのスライダーを非表示にする
+    /// </summary>
     private void CloseSlider()
     {
         if (sliderObject != null)
@@ -52,6 +66,9 @@ public class SoundVolumeController : MonoBehaviour
         SaveSetting();
     }
 
+    /// <summary>
+    /// 設定を保存する
+    /// </summary>
     private void SaveSetting()
     {
         if (AtsumaruAPI.Instance.IsValid())
@@ -70,7 +87,9 @@ public class SoundVolumeController : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// スライダーの開閉をトグルする
+    /// </summary>
     public void OnTggleButton()
     {
         if (toggleButton)
@@ -84,6 +103,9 @@ public class SoundVolumeController : MonoBehaviour
         toggleButton = !toggleButton;
     }
 
+    /// <summary>
+    /// スライダーを閉じる
+    /// </summary>
     public void OnClose()
     {
         if (toggleButton)
@@ -93,6 +115,10 @@ public class SoundVolumeController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// スライダーの値が変更されたときに呼ばれる
+    /// </summary>
+    /// <param name="value">変更された値</param>
     public void OnChangeValue(float value)
     {
         if (sliderController != null)

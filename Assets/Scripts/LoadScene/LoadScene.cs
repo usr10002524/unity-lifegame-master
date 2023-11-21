@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// ロードシーン
 /// Atsumaru APIが有効な場合は、ServerDataをロードする
+/// Atsumaru APIが無効な場合は、localStorageからロードする
 /// </summary>
 public class LoadScene : MonoBehaviour
 {

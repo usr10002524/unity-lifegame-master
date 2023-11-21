@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+/// <summary>
+/// サウンドボリュームスライダーコントローラ
+/// </summary>
 public class SoundSliderController : MonoBehaviour
 {
     [SerializeField] private Slider slider;
@@ -15,12 +18,20 @@ public class SoundSliderController : MonoBehaviour
     private RectTransform panelRectTransform;
 
 
+    /// <summary>
+    /// サウンドボリュームをセットする
+    /// </summary>
+    /// <param name="volume">サウンドボリュームの値(0-1)</param>
     public void SetVolume(float volume)
     {
+        // 0.0~1.0の範囲にクランプする
         volume = Mathf.Clamp01(volume);
         slider.value = volume;
     }
 
+    /// <summary>
+    /// Awake
+    /// </summary>
     private void Awake()
     {
         slider.minValue = 0.0f;
@@ -36,6 +47,9 @@ public class SoundSliderController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Update
+    /// </summary>
     private void Update()
     {
         if (IsMouseClickOutside())
@@ -47,6 +61,10 @@ public class SoundSliderController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// スライダーの外でクリックされたかチェックする
+    /// </summary>
+    /// <returns></returns>
     private bool IsMouseClickOutside()
     {
         if (sliderPanel == null)
@@ -72,6 +90,13 @@ public class SoundSliderController : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// 指定された座標がオブジェクトの範囲内かチェックする
+    /// </summary>
+    /// <param name="rectTransform">オブジェクトのRectTransform</param>
+    /// <param name="x">X座標</param>
+    /// <param name="y">Y座標</param>
+    /// <returns>オブジェクト内のときはtrue、そうでないときはfalseを返す</returns>
     private bool IsInsideObject(RectTransform rectTransform, float x, float y)
     {
         if (rectTransform == null)

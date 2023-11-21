@@ -4,6 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// ドロップダウンリストの位置制御
+/// </summary>
 public class DropdownListPosition : MonoBehaviour
 {
     private TMP_Dropdown dropdown;
@@ -27,6 +30,10 @@ public class DropdownListPosition : MonoBehaviour
         lastPositionValid = false;
     }
 
+    /// <summary>
+    /// ドロップダウンリストが選択された際の処理
+    /// </summary>
+    /// <param name="data">選択アイテム</param>
     private void OnSelect(BaseEventData data)
     {
         // Debug.Log("Dropdown OnSelect.");
@@ -55,6 +62,10 @@ public class DropdownListPosition : MonoBehaviour
         // Debug.Log(string.Format("OnSelect() x:{0}, y:{1}", lastPostion.x, lastPostion.y));
     }
 
+    /// <summary>
+    /// ドロップダウンリストが選択変更された際の処理
+    /// </summary>
+    /// <param name="value">変更された位置</param>
     private void OnChanged(int value)
     {
         Transform currentTransform = transform.Find("Dropdown List/Viewport/Content");

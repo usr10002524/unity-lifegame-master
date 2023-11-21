@@ -12,6 +12,10 @@ public class HelpPage : MonoBehaviour
     [SerializeField] public string title;
     [SerializeField] private UnityEvent redrawEvent;
 
+    /// <summary>
+    /// 文字列をセットする
+    /// </summary>
+    /// <param name="str">文字列</param>
     public void SetString(string str)
     {
         title = str;
@@ -21,6 +25,10 @@ public class HelpPage : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// スプライトをセットする
+    /// </summary>
+    /// <param name="sprt">スプライト</param>
     public void SetSprite(Sprite sprt)
     {
         sprite = sprt;

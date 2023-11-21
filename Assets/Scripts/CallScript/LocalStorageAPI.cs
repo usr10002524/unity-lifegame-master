@@ -6,6 +6,7 @@ using UnityEngine;
 /// <summary>
 /// WebGLでローカルストレージを呼び出すクラス
 /// 内部で、ローカルストレージ用プラグインとやり取りを行っている
+/// AtsumaruAPIが使えないときの代替手段
 /// </summary>
 public class LocalStorageAPI : MonoBehaviour
 {

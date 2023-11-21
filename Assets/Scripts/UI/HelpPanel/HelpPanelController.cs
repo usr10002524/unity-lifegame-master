@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// ヘルプパネルコントローラ
+/// </summary>
 public class HelpPanelController : MonoBehaviour
 {
     /// <summary>

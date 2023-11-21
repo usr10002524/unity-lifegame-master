@@ -5,6 +5,9 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// テストシーン
+/// </summary>
 public class TestScene : MonoBehaviour
 {
     [SerializeField] private GameObject dropDownObject;
@@ -35,6 +38,9 @@ public class TestScene : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// ドロップダウンの初期化
+    /// </summary>
     private void InitDropdown()
     {
         if (doropdownInitialized)
@@ -56,6 +62,10 @@ public class TestScene : MonoBehaviour
         doropdownInitialized = true;
     }
 
+    /// <summary>
+    /// ドロップダウンメニューの選択を変更した際に呼ばれる
+    /// </summary>
+    /// <param name="value">選択他アイテム</param>
     public void OnDropdownValueChanged(int value)
     {
         if (value < dropdownItems.Count)

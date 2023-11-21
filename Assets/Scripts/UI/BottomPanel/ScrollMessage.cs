@@ -158,6 +158,10 @@ public class ScrollMessage : MonoBehaviour
         moveMessageCoroutine = null;
     }
 
+    /// <summary>
+    /// メッセージ表示の初期化ステップ
+    /// </summary>
+    /// <param name="step">ステップ</param>
     private void StepStart(ref Step step)
     {
         // パラメータ初期化
@@ -168,6 +172,10 @@ public class ScrollMessage : MonoBehaviour
         step = Step.Show;
     }
 
+    /// <summary>
+    /// メッセージを表示する
+    /// </summary>
+    /// <param name="step">ステップ</param>
     private void StepShow(ref Step step)
     {
         // 表示するメッセージをセット
@@ -185,6 +193,10 @@ public class ScrollMessage : MonoBehaviour
         step = Step.ShowWait;
     }
 
+    /// <summary>
+    /// メッセージ表示中ステップ
+    /// </summary>
+    /// <param name="step">ステップ</param>
     private void StepShowWait(ref Step step)
     {
         animationTimer += Time.deltaTime;
@@ -196,6 +208,10 @@ public class ScrollMessage : MonoBehaviour
         step = Step.Move;
     }
 
+    /// <summary>
+    /// メッセージをスクロールさせる
+    /// </summary>
+    /// <param name="step">ステップ</param>
     private void StepMove(ref Step step)
     {
         // 次の行があればメッセージに追加する
@@ -215,6 +231,10 @@ public class ScrollMessage : MonoBehaviour
         step = Step.MoveWait;
     }
 
+    /// <summary>
+    /// メッセージスクロール中ステップ
+    /// </summary>
+    /// <param name="step">ステップ</param>
     private void StepMoveWait(ref Step step)
     {
         //curveを適応させ、移動処理を行う
@@ -233,6 +253,10 @@ public class ScrollMessage : MonoBehaviour
         step = Step.Next;
     }
 
+    /// <summary>
+    /// 次のメッセージに切り替える
+    /// </summary>
+    /// <param name="step">ステップ</param>
     private void StepNext(ref Step step)
     {
         messageIndex++;
@@ -248,6 +272,9 @@ public class ScrollMessage : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 終了ステップ
+    /// </summary>
     private void StepEnd()
     {
         // 後片付け
@@ -255,13 +282,18 @@ public class ScrollMessage : MonoBehaviour
         rectTransform.anchoredPosition = startPostion;
     }
 
-
+    /// <summary>
+    /// 挿入メッセージの表示準備
+    /// </summary>
     public void SetupInsertMessage()
     {
         SetupMessage(messageInsert);
         messageInsert = "";
     }
 
+    /// <summary>
+    /// 通常メッセージの表示準備
+    /// </summary>
     private void SetupMessage()
     {
         // リストから最初の文字列を取り出す
@@ -271,6 +303,10 @@ public class ScrollMessage : MonoBehaviour
         SetupMessage(message);
     }
 
+    /// <summary>
+    /// メッセージを表示する準備を行う
+    /// </summary>
+    /// <param name="message">メッセージ文字列</param>
     private void SetupMessage(string message)
     {
         currentMessage.Clear();

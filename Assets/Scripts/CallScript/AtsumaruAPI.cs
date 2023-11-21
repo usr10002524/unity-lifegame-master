@@ -6,6 +6,7 @@ using UnityEngine;
 /// <summary>
 /// アツマールAPIを呼び出すクラス
 /// 内部で、アツマール用プラグインとやり取りを行っている
+/// Plugins/Atsumaru-lib.jslib, Plugins/Atsumaru-lib.jspre 参照
 /// </summary>
 public class AtsumaruAPI : MonoBehaviour
 {

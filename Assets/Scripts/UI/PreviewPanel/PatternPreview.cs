@@ -5,6 +5,9 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// パターンプリビューパネル
+/// </summary>
 public class PatternPreview : MonoBehaviour
 {
     [SerializeField] private GameObject previewBaseObject;
@@ -50,7 +53,9 @@ public class PatternPreview : MonoBehaviour
     private static readonly float PREVIEW_PANEL_WIDTH = 320;
     private static readonly float PREVIEW_PANEL_HEIGHT = 240;
 
-
+    /// <summary>
+    /// Awake
+    /// </summary>
     private void Awake()
     {
         cells = new List<GameObject>();
@@ -66,11 +71,17 @@ public class PatternPreview : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Start
+    /// </summary>
     private void Start()
     {
         CheckAndSetupDropdown();
     }
 
+    /// <summary>
+    /// Update
+    /// </summary>
     private void Update()
     {
         CheckAndSetupDropdown();
@@ -84,6 +95,11 @@ public class PatternPreview : MonoBehaviour
         //     CloseWindow();
         // }
     }
+
+    /// <summary>
+    /// ドロップダウンリストが変更された際の処理
+    /// </summary>
+    /// <param name="value">変更後に選択されているアイテム</param>
     public void OnDropdownValueChanged(int value)
     {
         if (value < filenameList.Count)
@@ -98,6 +114,10 @@ public class PatternPreview : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// プリビューするアイテムを変更する
+    /// </summary>
+    /// <param name="name">変更するパターンの名前</param>
     private void ChangePreviewItem(string name)
     {
         // Debug.Log(string.Format("PatternPreview.OnDropdownValueChanged() name:{0}", name));
@@ -108,6 +128,9 @@ public class PatternPreview : MonoBehaviour
         Preview();
     }
 
+    /// <summary>
+    /// 垂直反転を行う
+    /// </summary>
     public void OnVFlip()
     {
         vFlip = !vFlip;
@@ -115,6 +138,9 @@ public class PatternPreview : MonoBehaviour
         Preview();
     }
 
+    /// <summary>
+    /// 水平反転を行う
+    /// </summary>
     public void OnHFlip()
     {
         hFlip = !hFlip;
@@ -122,6 +148,9 @@ public class PatternPreview : MonoBehaviour
         Preview();
     }
 
+    /// <summary>
+    /// 右回転を行う
+    /// </summary>
     public void OnRotationR()
     {
         switch (rotate)
@@ -135,6 +164,9 @@ public class PatternPreview : MonoBehaviour
         Preview();
     }
 
+    /// <summary>
+    ///  左回転を行う
+    /// </summary>
     public void OnRotationL()
     {
         switch (rotate)
@@ -172,6 +204,9 @@ public class PatternPreview : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// プリビューウィンドウを開く
+    /// </summary>
     public void OpenWindow()
     {
         if (IsMoving())
@@ -195,6 +230,9 @@ public class PatternPreview : MonoBehaviour
         StartCoroutine(MoveWindow());
     }
 
+    /// <summary>
+    /// プリビューウィンドウを閉じる
+    /// </summary>
     public void CloseWindow()
     {
         if (IsMoving())
@@ -212,6 +250,9 @@ public class PatternPreview : MonoBehaviour
         StartCoroutine(MoveWindow());
     }
 
+    /// <summary>
+    /// OKボタンが押された際の処理
+    /// </summary>
     public void OnOKButton()
     {
         if (IsMoving())
@@ -238,36 +279,60 @@ public class PatternPreview : MonoBehaviour
         StartCoroutine(MoveWindow());
     }
 
+    /// <summary>
+    /// ウィンドウが開閉中かどうかチェックする
+    /// </summary>
+    /// <returns>開閉中の場合はtrue、そうでない場合はfalseを返す</returns>
     public bool IsMoving()
     {
         return isMoving;
     }
 
+    /// <summary>
+    /// ウィンドウが開いているかチェックする
+    /// </summary>
+    /// <returns>開いている場合はtrue、そうでない場合はfalseを返す</returns>
     public bool IsOpen()
     {
         return (currentStat == Stat.Open);
     }
 
+    /// <summary>
+    /// 他のウィンドウが開いているかチェックする
+    /// </summary>
+    /// <returns>他のウィンドウが開いていればtrue、そうでなければfalseを返す</returns>
     public bool IsOtherMenuOpen()
     {
         if (HelpPanelManager.Instance.IsActive())
         {
             return true;
         }
+        // 他にウィンドウがあれば列挙する
 
         return false;
     }
 
+    /// <summary>
+    /// ウィンドウが閉じているかチェックする
+    /// </summary>
+    /// <returns>ウィンドウが閉じている場合はtrue、そうでない場合はfalseを返す</returns>
     public bool IsClose()
     {
         return (currentStat == Stat.Close);
     }
 
+    /// <summary>
+    /// 文字列を設定する
+    /// </summary>
+    /// <param name="str">文字列</param>
     public void SetString(string str)
     {
         initialItem = str;
     }
 
+    /// <summary>
+    /// ドロップダウンリストが初期化されていなければ初期化する
+    /// </summary>
     private void CheckAndSetupDropdown()
     {
         if (!doropdownInitialized)
@@ -279,6 +344,9 @@ public class PatternPreview : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// ドロップダウンリストの初期化
+    /// </summary>
     private void InitDropdown()
     {
         if (doropdownInitialized)
@@ -300,6 +368,9 @@ public class PatternPreview : MonoBehaviour
         doropdownInitialized = true;
     }
 
+    /// <summary>
+    /// プリビューを行う
+    /// </summary>
     private void Preview()
     {
         if (!patternData.IsValid())
@@ -388,6 +459,12 @@ public class PatternPreview : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// パターンのサイズに応じてかけるスケールを算出する
+    /// </summary>
+    /// <param name="patternData">パターンデータ</param>
+    /// <param name="outerCellCount">外枠に追加するセルの数</param>
+    /// <returns></returns>
     private float CalcRatio(PatternLoader.PatternData patternData, int outerCellCount = 0)
     {
         //外側の追加マスを考慮したサイズ
@@ -413,6 +490,12 @@ public class PatternPreview : MonoBehaviour
         return ratio;
     }
 
+    /// <summary>
+    /// プリビューウィンドウにセルを追加する
+    /// </summary>
+    /// <param name="anchoredPosition">中心座標</param>
+    /// <param name="anchoredSize">アンカーサイズ</param>
+    /// <param name="colorStat">色</param>
     private void AddCell(Vector2 anchoredPosition, Vector2 anchoredSize, int colorStat)
     {
         // セルの生成
@@ -436,6 +519,9 @@ public class PatternPreview : MonoBehaviour
         cells.Add(child);
     }
 
+    /// <summary>
+    /// プリビューウィンドウのセルをクリアする
+    /// </summary>
     private void ClearCells()
     {
         foreach (var item in cells)
@@ -446,6 +532,10 @@ public class PatternPreview : MonoBehaviour
         cells.Clear();
     }
 
+    /// <summary>
+    /// ウィンドウを開閉させる
+    /// </summary>
+    /// <returns>IEnumerator</returns>
     private IEnumerator MoveWindow()
     {
         bool isEnd = false;
