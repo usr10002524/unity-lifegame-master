@@ -3572,7 +3572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f20bc4030fb884abf27ecda0598f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: English
+  itemName: "\u65E5\u672C\u8A9E"
   fadeoutDuration: 0.25
   langType: 0
 --- !u!1 &1250963299
@@ -5249,7 +5249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f20bc4030fb884abf27ecda0598f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: "\u65E5\u672C\u8A9E"
+  itemName: English
   fadeoutDuration: 0.25
   langType: 1
 --- !u!1 &1744027535
@@ -6360,9 +6360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4eafee9b2e47c945a6f571d3ae42995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneTransitDuration: 0.5
-  sceneTransitColor: {r: 0, g: 0, b: 0, a: 1}
-  sceneTransitSortOrder: 1
 --- !u!114 &1909512587
 MonoBehaviour:
   m_ObjectHideFlags: 0

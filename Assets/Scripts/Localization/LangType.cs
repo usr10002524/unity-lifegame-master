@@ -7,6 +7,6 @@ using UnityEngine;
 /// </summary>
 public enum LangType
 {
-    LangEn,
     LangJp,
+    LangEn,
 }

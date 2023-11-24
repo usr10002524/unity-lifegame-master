@@ -105,6 +105,12 @@ public class ServerData
         public int dataVersion; // データバージョン
         public int langIndex;   // 選択中の言語
 
+        public LangSettings()
+        {
+            dataVersion = 0;
+            langIndex = (int)LangType.LangJp;
+        }
+
         public bool IsValid()
         {
             return (dataVersion > 0);
